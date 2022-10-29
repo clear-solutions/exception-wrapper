@@ -71,7 +71,7 @@ class ExceptionWrapperTest {
     }
 
     @Test
-    void invoke_FunctionWithoutException_returnFunction() {
+    void invoke_FunctionWithoutException_returnValue() {
         Boolean actualResult = invoke(o ->
                                       {
                                           return o.equals(10);
