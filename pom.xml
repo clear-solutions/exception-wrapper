@@ -120,6 +120,15 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <additionalparam>-Xdoclint:all -Xdoclint:-missing</additionalparam>
+                    <additionalOptions>-Xdoclint:all -Xdoclint:-missing</additionalOptions>
+                    <additionalJOptions>
+                        <additionalJOption>-Xdoclint:all</additionalJOption>
+                        <additionalJOption>-Xdoclint:-missing</additionalJOption>
+                    </additionalJOptions>
+                </configuration>
+
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
