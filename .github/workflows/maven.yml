@@ -27,8 +27,6 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-    - name: Maven check the build plan
-      run: mvn artifact:check-buildplan
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
