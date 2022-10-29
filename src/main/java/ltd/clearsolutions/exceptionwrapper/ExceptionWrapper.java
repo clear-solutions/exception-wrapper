@@ -74,7 +74,7 @@ public class ExceptionWrapper {
 
     /**
      * wraps given function with checked exception
-     * catches and rethrows checked exceptions as unchecked exceptions: IOException -> UncheckedIOException; Exception -> UncheckedException
+     * catches and rethrows checked exceptions as unchecked exceptions: IOException to UncheckedIOException; Exception to UncheckedException
      * @return returns function without checked exceptions
      * @see java.io.UncheckedIOException
      * @see ltd.clearsolutions.exceptionwrapper.ExceptionWrapper.UncheckedException
@@ -85,7 +85,7 @@ public class ExceptionWrapper {
 
     /**
      * invoke given function with checked exception
-     * catches and rethrows checked exceptions as unchecked exceptions: IOException -> UncheckedIOException; Exception -> UncheckedException
+     * catches and rethrows checked exceptions as unchecked exceptions: IOException to UncheckedIOException; Exception to UncheckedException
      * @return {@link R}
      * @see java.io.UncheckedIOException
      * @see ltd.clearsolutions.exceptionwrapper.ExceptionWrapper.UncheckedException
@@ -104,7 +104,7 @@ public class ExceptionWrapper {
 
     /**
      * wraps given BiFunction with checked exception
-     * catches and rethrows checked exceptions as unchecked exceptions: IOException -> UncheckedIOException; Exception -> UncheckedException
+     * catches and rethrows checked exceptions as unchecked exceptions: IOException to UncheckedIOException; Exception to UncheckedException
      * @return returns BiFunction without checked exceptions
      * @see java.io.UncheckedIOException
      * @see ltd.clearsolutions.exceptionwrapper.ExceptionWrapper.UncheckedException
@@ -115,7 +115,7 @@ public class ExceptionWrapper {
 
     /**
      * invoke given BiFunction with checked exception
-     * catches and rethrows checked exceptions as unchecked exceptions: IOException -> UncheckedIOException; Exception -> UncheckedException
+     * catches and rethrows checked exceptions as unchecked exceptions: IOException to UncheckedIOException; Exception to UncheckedException
      * @return {@link R}
      * @see java.io.UncheckedIOException
      * @see ltd.clearsolutions.exceptionwrapper.ExceptionWrapper.UncheckedException
@@ -134,7 +134,7 @@ public class ExceptionWrapper {
 
     /**
      * wraps given consumer with checked exception
-     * catches and rethrows checked exceptions as unchecked exceptions: IOException -> UncheckedIOException; Exception -> UncheckedException
+     * catches and rethrows checked exceptions as unchecked exceptions: IOException to UncheckedIOException; Exception to UncheckedException
      * @return returns consumer without checked exceptions
      * @see java.io.UncheckedIOException
      * @see ltd.clearsolutions.exceptionwrapper.ExceptionWrapper.UncheckedException
@@ -146,7 +146,7 @@ public class ExceptionWrapper {
 
     /**
      * wraps given BiConsumer with checked exception
-     * catches and rethrows checked exceptions as unchecked exceptions: IOException -> UncheckedIOException; Exception -> UncheckedException
+     * catches and rethrows checked exceptions as unchecked exceptions: IOException to UncheckedIOException; Exception to UncheckedException
      * @return returns BiConsumer without checked exceptions
      * @see java.io.UncheckedIOException
      * @see ltd.clearsolutions.exceptionwrapper.ExceptionWrapper.UncheckedException
@@ -157,7 +157,7 @@ public class ExceptionWrapper {
 
     /**
      * invoke given Consumer with checked exception
-     * catches and rethrows checked exceptions as unchecked exceptions: IOException -> UncheckedIOException; Exception -> UncheckedException
+     * catches and rethrows checked exceptions as unchecked exceptions: IOException to UncheckedIOException; Exception to UncheckedException
      * @see java.io.UncheckedIOException
      * @see ltd.clearsolutions.exceptionwrapper.ExceptionWrapper.UncheckedException
      */
@@ -175,7 +175,7 @@ public class ExceptionWrapper {
 
     /**
      * invoke given BiConsumer with checked exception
-     * catches and rethrows checked exceptions as unchecked exceptions: IOException -> UncheckedIOException; Exception -> UncheckedException
+     * catches and rethrows checked exceptions as unchecked exceptions: IOException to UncheckedIOException; Exception to UncheckedException
      * @see java.io.UncheckedIOException
      * @see ltd.clearsolutions.exceptionwrapper.ExceptionWrapper.UncheckedException
      */
@@ -193,7 +193,7 @@ public class ExceptionWrapper {
 
     /**
      * wraps given Supplier with checked exception
-     * catches and rethrows checked exceptions as unchecked exceptions: IOException -> UncheckedIOException; Exception -> UncheckedException
+     * catches and rethrows checked exceptions as unchecked exceptions: IOException to UncheckedIOException; Exception to UncheckedException
      * @return returns Supplier without checked exceptions
      * @see java.io.UncheckedIOException
      * @see ltd.clearsolutions.exceptionwrapper.ExceptionWrapper.UncheckedException
@@ -204,7 +204,7 @@ public class ExceptionWrapper {
 
     /**
      * invoke given Supplier with checked exception
-     * catches and rethrows checked exceptions as unchecked exceptions: IOException -> UncheckedIOException; Exception -> UncheckedException
+     * catches and rethrows checked exceptions as unchecked exceptions: IOException to UncheckedIOException; Exception to UncheckedException
      * @see java.io.UncheckedIOException
      * @see ltd.clearsolutions.exceptionwrapper.ExceptionWrapper.UncheckedException
      */
@@ -222,7 +222,7 @@ public class ExceptionWrapper {
 
     /**
      * wraps given Runnable with checked exception
-     * catches and rethrows checked exceptions as unchecked exceptions: IOException -> UncheckedIOException; Exception -> UncheckedException
+     * catches and rethrows checked exceptions as unchecked exceptions: IOException to UncheckedIOException; Exception to UncheckedException
      * @return returns Runnable without checked exceptions
      * @see java.io.UncheckedIOException
      * @see ltd.clearsolutions.exceptionwrapper.ExceptionWrapper.UncheckedException
@@ -233,7 +233,7 @@ public class ExceptionWrapper {
 
     /**
      * invoke given Runnable with checked exception
-     * catches and rethrows checked exceptions as unchecked exceptions: IOException -> UncheckedIOException; Exception -> UncheckedException
+     * catches and rethrows checked exceptions as unchecked exceptions: IOException to UncheckedIOException; Exception to UncheckedException
      * @see java.io.UncheckedIOException
      * @see ltd.clearsolutions.exceptionwrapper.ExceptionWrapper.UncheckedException
      */
