@@ -46,16 +46,6 @@ public class ExceptionWrapper {
      */
     public static class UncheckedException extends RuntimeException {
         @SuppressWarnings("unused")
-        public UncheckedException() {
-            super();
-        }
-
-        @SuppressWarnings("unused")
-        public UncheckedException(String message) {
-            super(message);
-        }
-
-        @SuppressWarnings("unused")
         public UncheckedException(String message, Throwable cause) {
             super(message, cause);
         }
@@ -64,12 +54,6 @@ public class ExceptionWrapper {
             super(cause);
         }
 
-        @SuppressWarnings("unused")
-        protected UncheckedException(String message, Throwable cause,
-                                     boolean enableSuppression,
-                                     boolean writableStackTrace) {
-            super(message, cause, enableSuppression, writableStackTrace);
-        }
     }
 
     /**
@@ -93,12 +77,8 @@ public class ExceptionWrapper {
     public static <T, R> R invoke(FunctionWithException<T, R> functional, T t) {
         try {
             return functional.apply(t);
-        } catch (RuntimeException e) {
-            throw e;
-        } catch (IOException e) {
-            throw new UncheckedIOException(e);
         } catch (Exception e) {
-            throw new UncheckedException(e);
+            throw mapException(e);
         }
     }
 
@@ -123,12 +103,8 @@ public class ExceptionWrapper {
     public static <T1, T2, R> R invoke(BiFunctionWithException<T1, T2, R> function, T1 t1, T2 t2) {
         try {
             return function.apply(t1, t2);
-        } catch (RuntimeException e) {
-            throw e;
-        } catch (IOException e) {
-            throw new UncheckedIOException(e);
         } catch (Exception e) {
-            throw new UncheckedException(e);
+           throw mapException(e);
         }
     }
 
@@ -164,12 +140,8 @@ public class ExceptionWrapper {
     public static <T> void invoke(ConsumerWithException<T> consumer, T t) {
         try {
             consumer.apply(t);
-        } catch (RuntimeException e) {
-            throw e;
-        } catch (IOException e) {
-            throw new UncheckedIOException(e);
         } catch (Exception e) {
-            throw new UncheckedException(e);
+            handleException(e);
         }
     }
 
@@ -182,12 +154,8 @@ public class ExceptionWrapper {
     public static <T1, T2> void invoke(BiConsumerWithException<T1, T2> consumer, T1 t1, T2 t2) {
         try {
             consumer.apply(t1, t2);
-        } catch (RuntimeException e) {
-            throw e;
-        } catch (IOException e) {
-            throw new UncheckedIOException(e);
         } catch (Exception e) {
-            throw new UncheckedException(e);
+            throw mapException(e);
         }
     }
 
@@ -211,12 +179,8 @@ public class ExceptionWrapper {
     public static <R> R invoke(SupplierWithException<R> supplier) {
         try {
             return supplier.get();
-        } catch (RuntimeException e) {
-            throw e;
-        } catch (IOException e) {
-            throw new UncheckedIOException(e);
         } catch (Exception e) {
-            throw new UncheckedException(e);
+            throw mapException(e);
         }
     }
 
@@ -240,12 +204,22 @@ public class ExceptionWrapper {
     public static void invoke(CallWithException consumer) {
         try {
             consumer.apply();
-        } catch (RuntimeException e) {
-            throw e;
-        } catch (IOException e) {
-            throw new UncheckedIOException(e);
         } catch (Exception e) {
-            throw new UncheckedException(e);
+            handleException(e);
+        }
+    }
+
+    private static <E extends Exception> void handleException(E e) {
+        throw mapException(e);
+    }
+
+    private static <E extends Exception> RuntimeException mapException(E e) {
+        if (e instanceof IOException) {
+            return new UncheckedIOException((IOException) e);
+        } else if (e instanceof RuntimeException) {
+            return (RuntimeException) e;
+        } else {
+            return new UncheckedException(e);
         }
     }
 }

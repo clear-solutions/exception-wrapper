@@ -31,8 +31,7 @@ class ExceptionWrapperTest {
     void wrap_FunctionWithoutException_returnFunction() {
         Function<Integer, Boolean> wrap = wrap(o -> {return o.equals(0);});
 
-        assertThat(wrap.apply(0))
-            .isEqualTo(true);
+        assertThat(wrap.apply(0)).isEqualTo(true);
     }
 
     @Test
